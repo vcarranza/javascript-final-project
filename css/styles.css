@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+
+.container-fluid{
+  padding:0;
+  margin:0;
+}
+/*nav section*/
+.nav li a:hover{
+  background-color: transparent;
+}
+.navbar-default{
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus{
+  color:#5b7baf;
+  background-color: rgba(114, 144, 193);
+}
+
+.navbar-default .navbar-nav>li>a{
+  color:#6284bc;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav li a:hover,
+.navbar-default .navbar-nav li a:focus{
+  color:#d9e5f9;
+  background-color: rgba(114, 144, 193);
+}
+
+nav.navbar {
+  position:absolute;
+  top:100;
+  right:0;
+  left:0;
+  z-index:20;
+
+}
+.navbar-brand>img{
+  margin-top:-25px;
+}
+.well{
+  margin-top:150px;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #6284bc;
+  font-size: 32px;
+}
+.jumbotron{
+  background-image: url('../img/new_racing.jpg');
+  height:1200px;
+  background-position: center;
+  background-size: cover;
+}
+
+/*carousel section*/
+
+.wrap{
+  min-height: 100vh;
+}
+.carousel{
+  margin-bottom: 60px;
+}
+.carousel-caption{
+  z-index:10;
+  padding-bottom:60px;
+}
+.carousel-inner .item{
+  width:100%;
+  height:600px;
+  background-position: center;
+  background-size: cover;
+}
+.main_img1 {
+  background-image: url('../img/codes.jpg');
+}
+.main_img2 {
+  background-image: url('../img/dunk.jpg');
+}
+
+.main-logo{
+  max-height:300px;
+}
+.btn-primary{
+  color:#fff;
+  background-color: #030407;
+  border-color: transparent;
+}
+.btn-primary:hover{
+  background-color: #d34326;
+  border-color:transparent;
+}
+.carousel-caption p{
+  color:#030407;
+  font-size: 32px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.carousel-caption h1{
+  color:#030407;
+  font-size: 50px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+.petstore h3 p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 32px;
+  color:#030407;
+}
+.restaurant h3 p{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 32px;
+  color:#030407;
+}
+
+.contact-form{
+  background-color: #6284bc;
+  color:#fff;
+  border: 1px solid #fff;
+}
+.contact-form form{
+  padding: 5% 0;
+}
+.contact-form span{
+  color:#ff0d06:
+}
+#contact h1{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color:#6284bc;
+  font-size: 32px;
+}
+#contact-fine-print{
+  font-size:12px !important;
+  text-align: center;
+}
+strong{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color:#6284bc;
+  font-size: 32px;
+}
+br{
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  color:#6284bc;
+  font-size: 16px;
+}
+
+
+
+/*start of
