@@ -2,51 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Document</title>
-  <script>
-    function myfunction(){
-      document.getElementById("demo").innerHTML = "Paragraph Changed.";
+  <title>Running at the Chuck</title>
+  <style>
+    body {
+      text-align: center;
+      background: #61bfce;
+  }
+
+    #container {
+      width:auto;
+      height:auto;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 32px;
+  }
+    .helpText{
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 24px;
     }
-  </script>
+
+  </style>
 </head>
+
 <body>
-  <div class="container">
-		<div class="row">
-			<div class="intro col-12">
-				<h1>Work To-Dos</h1>
+  <div id="container">
+		<div id="row">
+			<div id="intro col-12">
+				<h1>Training for the Fresno Urban Run</h1>
 				<div>
-					<div class="border1"></div>
+					<div id="border1"></div>
 		   </div>
 		</div>
 
 		<div class="row">
 			<div class="helpText col-12">
-				<p id="first">Enter text into the input field to add items to your list.</p>
-				<p id="second">Click the item to mark it as complete.</p>
-				<p id="third">Click the "X" to remove the item from your list.</p>
+				<p id="first">What do I need to know about the race?</p>
+				<p id="second">The Grand Climb will await Me?😨</p>
+				<p id="third">Click the "X" to remove/complete the task for my training.</p>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-12">
-				<input id="userInput" type="text" placeholder="New item..." maxlength="27">
-				<button id="enter"><i class="fas fa-pencil-alt"></i></button>
+      <ul>
+        <input onkeyup="checkEnter(event)" id="newItemInput" type="text" placeholder="New Item"> <button>👟</button>
+      </ul>
+
 			</div>
 		</div>
 
-		<!-- Empty List -->
-		<div class="row">
-			<div class="listItems col-12">
-				<ul class="col-12 offset-0 col-sm-8 offset-sm-2">
-				</ul>
-			</div>
-		</div>
-  </div>
-	</div>
-	<script type="text/javascript" src="todo.js"></script>
+	<script>
+        const submitButton = document.getElementsByTagName('button')[0];
+        submitButton.addEventListener('click', addItem);
+        function checkEnter(event) {
+            event.code === 'Enter' ? addItem() : console.log('press enter')
+
+        }
+
+        function addItem() {
+            const itemInput = document.getElementById('newItemInput');
+            if (!itemInput.value) {
+                return;
+            }
+            console.log('New item', itemInput.value );
+            const newItem = create();
+            const deleteButton = createDelete();
+            deleteButton.addEventListener('click', deleteItem);
+            deleteButton.innerText = 'X';
+            deleteButton.style.margin = '4px';
+            newItem.appendChild(deleteButton);
+            newItem.appendChild(document.createTextNode(itemInput.value));
+
+            const ul = document.getElementsByTagName('ul')[0];
+            ul.appendChild(newItem);
+            itemInput.value = '';
+        }
+
+        function create() {
+            return document.createElement('li');
+        }
+
+        function createDelete() {
+            return document.createElement('button');
+        }
+
+        function deleteItem() {
+            console.log('button', this);
+            const canDelete = confirm('Are you sure you completed the task? ' + this.nextSibling.textContent);
+            if (canDelete) {
+                this.parentNode.remove();
+            }
+        }
+
+    </script>
+
+
 </body>
 </html>
